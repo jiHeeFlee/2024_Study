@@ -3,7 +3,7 @@ let ages = [20, 24, 25, 29, 30, 33];
 let numbers = [];
 
 //Q.01 fruits 배열에 '토마토'를 삭제하고 그 자리에 '사과','청포도'를 추가
-fruits.splice(1,1,'사과','토마토');
+fruits.splice(1,1,'사과','청포도');
 console.log('Q.01 fruits : ',fruits);
 
 //Q.02 fruits 배열의 첫번째 요소를 삭제
