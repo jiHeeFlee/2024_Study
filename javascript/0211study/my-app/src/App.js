@@ -8,6 +8,7 @@ function App() {
     const [buttonText,setButtonText]=useState('🎀 fucking world!! 🎀');
     const handleFucking=()=>{
         setButtonText('fucking world!!')
+        console.log('click Button!!')
     }
   return (
     <>
