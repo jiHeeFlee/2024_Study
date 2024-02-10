@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import React,{useState} from "react";
 import './App.css';
 import styled from "styled-components";
+import heartImg from "./heartImg.jpg"
 
 function App() {
     const [buttonText,setButtonText]=useState('🎀 fucking world!! 🎀');
@@ -16,6 +17,7 @@ function App() {
         <Counting onClick={handleFucking}>
             {buttonText}
         </Counting>
+        <image href={heartImg} className={'heart'}/>
       </Container>
     </>
   );
@@ -29,6 +31,11 @@ const Container=styled.div`
   
   color:aquamarine;
   font-weight: 700;
+  
+  .heart{
+    width: 5vw;
+    height: 5vh;
+  }
 `;
 
 const Counting = styled.button`
