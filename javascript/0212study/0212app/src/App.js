@@ -8,14 +8,14 @@ function App() {
   // 상태 관리
   const [shoppingList,setShoppingList]=useState('');
   const handleInput=()=>{
-    setShoppingList('too hard')
+      setShoppingList('too hard!!!')
   }
   return (
       <>
         <Container>
             <div className={'listUp'}>
-                <input type={"text"} placeholder={'please input your shopping list!!'}/>
-                <button type={"submit"} onClick={handleInput}>sumbit</button>
+                <input type={'text'} placeholder={"plz do not input!"}/>
+                <button type={"submit"}>submit</button>
             </div>
             <div className={'listText'}>
                 {shoppingList}
