@@ -2,18 +2,19 @@ import logo from './logo.svg';
 import './App.css';
 
 import React,{useState} from "react";
-import styled from 'styled-component';
+import styled from "styled-components";
+
 function App() {
   // 상태 관리
   const [shoppingList,setShoppingList]=useState('');
   const handleInput=()=>{
-    setShoppingList(shoppingListText.value)
+    setShoppingList('too hard!!!')
   }
   return (
       <>
         <Container>
             <div className={'listUp'}>
-                <input id={shoppingListText} type={"text"} />
+                <input type={"text"} />
                 <button type={"submit"} onClick={handleInput}>sumbit</button>
             </div>
             <div className={'listText'}>
