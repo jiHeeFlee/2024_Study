@@ -2,18 +2,19 @@ import logo from './logo.svg';
 import './App.css';
 
 import React,{useState} from "react";
-import styled from 'styled-component';
+import styled from "styled-components";
+
 function App() {
   // 상태 관리
   const [shoppingList,setShoppingList]=useState('');
   const handleInput=()=>{
-    setShoppingList(shoppingListText.value)
+    setShoppingList('too hard')
   }
   return (
       <>
         <Container>
             <div className={'listUp'}>
-                <input id={shoppingListText} type={"text"} />
+                <input type={"text"} placeholder={'please input your shopping list!!'}/>
                 <button type={"submit"} onClick={handleInput}>sumbit</button>
             </div>
             <div className={'listText'}>
@@ -58,13 +59,26 @@ const Container=styled.div`
     flex-direction: row;
     
     input{
+      width: 17.5vw;
+      height: 4vh;
+      padding-left: 0.7vw;
+      
       outline: none;
       border: lightsalmon;
     }
     
     button{
+      margin-left: 2vw;
       background-color: darkgoldenrod;
       color: white;
+      
+      outline: none;
+      border: none;
+      border-radius: 30%;
     }
+  }
+  
+  .listText{
+    margin: 2vh auto;
   }
 `;
