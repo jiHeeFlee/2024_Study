@@ -9,6 +9,7 @@ function App() {
   const [shoppingList,setShoppingList]=useState('');
   const handleInput=()=>{
     setShoppingList('too hard')
+      alert('tooo hard!!!!!');
   }
   return (
       <>
