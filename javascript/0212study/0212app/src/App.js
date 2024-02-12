@@ -22,22 +22,6 @@ function App() {
             </div>
         </Container>
       </>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 
@@ -61,11 +45,23 @@ const Container=styled.div`
     input{
       outline: none;
       border: lightsalmon;
+
+      padding-top : 0.5vh;
+      padding-bottom : 0.5vh;
+      padding-left: 1.5vw;
     }
     
     button{
       background-color: darkgoldenrod;
       color: white;
+      
+      padding: 1vw;
+      outline: none;
+      border: none;
+      border-radius: 10px;
     }
+  }
+  .listText{
+    padding: 2vw;
   }
 `;
