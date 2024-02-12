@@ -7,18 +7,26 @@ import styled from "styled-components";
 function App() {
   // 상태 관리
   const [shoppingList,setShoppingList]=useState('');
-  const handleInput=()=>{
+  const textValue = document.getElementById('listText').value
+
+    const handleInput=()=>{
+      const name=document.getElementById('name').value;
+      document.getElementById('result').innerText=name;
+    }
+    const handleBtn=()=>{
     setShoppingList('too hard!!!')
   }
   return (
       <>
         <Container>
             <div className={'listUp'}>
-                <input type={"text"} />
-                <button type={"submit"} onClick={handleInput}>sumbit</button>
+                <input type={"text"} id={'listText'} onKeyUp={handleInput}/>
+                <button type={"submit"} onClick={handleBtn}>sumbit</button>
             </div>
             <div className={'listText'}>
                 {shoppingList}
+            </div>
+            <div id={'result'}>
             </div>
         </Container>
       </>
@@ -38,6 +46,8 @@ const Container=styled.div`
   background-color: lightgoldenrodyellow;
   font-weight: 500;
 
+  padding-top: 2vh;
+  
   .listUp{
     display: flex;
     flex-direction: row;
