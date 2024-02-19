@@ -1,19 +1,17 @@
-import React,{useState} from "react";
+import React from "react";
 import styled from "styled-components";
 
 import Home from "./components/Home";
 import Intro from "./components/Intro";
-// import Photo from "src/asset/img/photo";
+
+import Photo from "./asset/img/photo.jpg";
 
 function App() {
   return (
     <>
       <Container>
         <Home />
-          <div className={'photo'}>
-              {/*<Photo />*/}
-              editing code...
-          </div>
+          {/*<Photo />*/}
           <Intro />
       </Container>
     </>
@@ -30,9 +28,4 @@ const Container=styled.div`
 
   color: darkgoldenrod;
   //background-color: #1ea8a3;
-
-  .photo {
-    display: flex;
-    flex-direction: column;
-  }
 `;
