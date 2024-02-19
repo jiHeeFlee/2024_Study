@@ -25,10 +25,11 @@ const Container=styled.div`
   flex-direction: column;
   text-align: center;
   align-items: center;
-  
+
   color: darkgoldenrod;
-  
-  .photo{
+  //background-color: #1ea8a3;
+
+  .photo {
     display: flex;
     flex-direction: column;
   }
