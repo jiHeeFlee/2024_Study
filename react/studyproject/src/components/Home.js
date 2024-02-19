@@ -1,14 +1,28 @@
 import React,{useState} from "react";
 import styled from "styled-components"
 
-import photo from "../asset/img/photo.jpg"
 
 function Home(){
 
     return (
         <>
+            <Container>
+                Home
+            </Container>
         </>
     )
 }
 
 export default Home;
+const Container=styled.div`
+  display: flex;
+  flex-direction: column;
+  
+  color: #1a1a1a;
+  font-weight: 500;
+  
+  &:hover{
+    color: #0074D9;
+    font-weight: 700;
+  }
+`;
