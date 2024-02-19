@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Container>
-        Don't move please!! photo shop!!
+          fucking this is not real....
       </Container>
     </>
   );
