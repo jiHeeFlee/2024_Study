@@ -1,7 +1,8 @@
 import React,{useState} from "react";
 import styled from "styled-components";
 
-import Home from "../src/components/Home";
+import Home from "./components/Home";
+import Intro from "./components/Intro";
 // import Photo from "src/asset/img/photo";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
               {/*<Photo />*/}
               editing code...
           </div>
+          <Intro />
       </Container>
     </>
   );
