@@ -4,14 +4,12 @@ import styled from "styled-components";
 import Home from "./components/Home";
 import Intro from "./components/Intro";
 
-import Photo from "./asset/img/photo.jpg";
 
 function App() {
   return (
     <>
       <Container>
         <Home />
-          {/*<Photo />*/}
           <Intro />
       </Container>
     </>
