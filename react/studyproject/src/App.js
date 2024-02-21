@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Home from "./components/Home";
 import Intro from "./components/Intro";
-
+import Input from "./components/Input";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <Container>
         <Home />
           <Intro />
+          <Input />
       </Container>
     </>
   );
