@@ -6,15 +6,16 @@ function Input(){
     return (
         <>
             <Container>
-                <input
-                    type={'text'}
-                    placeholder={'please your message!'}
-                    className={'inputDiv'}
-                />
-                <input
-                    type={'submit'}
-                    className={'inputSubmitBtn'}
-                >submit</input>
+                input이 왜안되는거야?
+                {/*<input*/}
+                {/*    type={'text'}*/}
+                {/*    placeholder={'please your message!'}*/}
+                {/*    className={'inputDiv'}*/}
+                {/*/>*/}
+                {/*<input*/}
+                {/*    type={'submit'}*/}
+                {/*    className={'inputSubmitBtn'}*/}
+                {/*>submit</input>*/}
             </Container>
         </>
     )
