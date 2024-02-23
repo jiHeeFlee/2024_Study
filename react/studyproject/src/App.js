@@ -8,7 +8,15 @@ import NavigationBar from "./components/NavigationBar";
 import Time from "./components/Time";
 
 function App() {
-  return (
+    const person={
+        name : 'jihee',
+        age : 26,
+        developer : true
+    };
+
+    const keys=Object.keys(person);
+
+    return (
     <>
       <Container>
         <Home />
@@ -16,6 +24,9 @@ function App() {
           <Input />
           <NavigationBar />
           <Time />
+          <div className={'dictionary'}>
+              {keys}
+          </div>
       </Container>
     </>
   );
@@ -31,4 +42,17 @@ const Container=styled.div`
 
   color: darkgoldenrod;
   //background-color: #1ea8a3;
+
+  .dictionary{
+    flex-direction: column;
+    
+    width: 10vw;
+    height: 4vh;
+
+    color: #ce4c4c;
+    background-color: #fffdfd;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+  }
 `;
