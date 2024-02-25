@@ -6,20 +6,25 @@ function Input(){
     return (
         <>
             <Container>
+                {/*<InputDiv>*/}
+                {/*    <input*/}
+                {/*        // type={'text'}*/}
+                {/*        // placeholder={'please write your message!'}*/}
+                {/*        // className={'inputDiv'}*/}
+                {/*    />*/}
+                {/*</InputDiv>*/}
                 <input
                     type={'text'}
                     placeholder={'please write your message!'}
                     className={'inputDiv'}
                 />
-                {/*<input*/}
-                {/*    type={'submit'}*/}
-                {/*    className={'inputSubmitBtn'}*/}
-                {/*>submit</input>*/}
-                <button
-                    type={'submit'}
-                    className={'inputSubmitBtn'}>
-                    submit
-                </button>
+                <ButtonDiv>
+                    <button
+                        type={'submit'}
+                        className={'inputSubmitBtn'}>
+                        submit
+                    </button>
+                </ButtonDiv>
             </Container>
         </>
     )
@@ -38,29 +43,36 @@ const Container=styled.div`
   
   .inputDiv{
     margin: 1vw;
-    padding: 0.5vw;
+    padding:1vw;
 
     border: #7f7f7f;
   }
-  
-  .inputSubmitBtn{
-    width: 4vw;
-    height: 1.3vh;
-    padding: 0.5%;
-    
-    background-color: #fff4c2;
-    outline: none;
-    border: none;
-    //border-radius: 10%;
-    &:hover{
-      background-color: orangered;
-      color: white;
-      font-weight: 700;
-    }
-    
-    &:active{
-      background-color: mediumseagreen;
-      color: white;
-    }
+`;
+
+// const InputDiv=styled.input`
+//   margin: 1vw;
+//   padding: 0.5vw;
+//
+//   border: #7f7f7f;
+// `;
+
+const ButtonDiv=styled.button`
+  width: 4vw;
+  height: 1.3vh;
+  padding: 0.5%;
+
+  background-color: #fff4c2;
+  outline: none;
+  border: none;
+  //border-radius: 10%;
+  &:hover{
+    background-color: orangered;
+    color: white;
+    font-weight: 700;
+  }
+
+  &:active{
+    background-color: mediumseagreen;
+    color: white;
   }
 `;
