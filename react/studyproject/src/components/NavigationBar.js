@@ -2,15 +2,15 @@ import React from 'react';
 import styled from "styled-components";
 
 function NavigationBar(){
+    const navigationList=[
+        'Home' , "Intro" , "About" , "More"
+    ]
 
     return(
         <>
             <Container>
                 <NavigationBarText>
-                    Home
-                    Intro
-                    About
-                    More
+                    {navigationList}
                 </NavigationBarText>
                 <div className={'Line'} />
             </Container>
@@ -24,16 +24,18 @@ const Container=styled.div`
   display: flex;
   flex-direction: column;
   
-  .Line{
-    width: 70%;
-    height: 0.3vh;
+  .Line {
+    width: 100%;
+    height: 10%;
+
+    background-color: #656565;
   }
 `;
 
 const NavigationBarText=styled.div`
   display: flex;
   flex-direction: row;
-
+  
   color: #2e2e2e;
   &:hover{
     font-weight: 700;

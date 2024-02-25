@@ -18,6 +18,8 @@ export default Intro;
 const Container=styled.div`
   display: flex;
   flex-direction: column;
+  
+  margin: 10vh auto;
 
   font-weight: 500;
   color: #0074D9;

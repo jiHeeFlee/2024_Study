@@ -16,10 +16,10 @@ function Home(){
 export default Home;
 const Container=styled.div`
   display: flex;
-  flex-direction: column;
   
   color: #1a1a1a;
   font-weight: 500;
+  margin-right: 50vw;
   
   &:hover{
     color: #0074D9;

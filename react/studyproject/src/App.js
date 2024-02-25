@@ -19,10 +19,13 @@ function App() {
     return (
     <>
       <Container>
-        <Home />
+          <div className={'navigationDiv'}>
+              <Home />
+              <NavigationBar />
+          </div>
           <Intro />
           <Input />
-          <NavigationBar />
+
           <Time />
           <div className={'dictionary'}>
               {keys+' '}
@@ -39,10 +42,16 @@ const Container=styled.div`
   flex-direction: column;
   text-align: center;
   align-items: center;
+  //justify-content: center;
 
   color: darkgoldenrod;
   //background-color: #1ea8a3;
 
+  .navigationDiv{
+    display: flex;
+    flex-direction: row;
+    margin: 3vh auto;
+  }
   .dictionary{
     flex-direction: column;
     
