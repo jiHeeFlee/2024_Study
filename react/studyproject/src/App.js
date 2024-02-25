@@ -25,7 +25,7 @@ function App() {
           <NavigationBar />
           <Time />
           <div className={'dictionary'}>
-              {keys}
+              {keys+' '}
           </div>
       </Container>
     </>
