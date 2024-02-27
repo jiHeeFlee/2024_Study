@@ -1,8 +1,9 @@
-import React from 'react';
+import React,{useState} from 'react';
 import styled from "styled-components";
 
 function Input(){
-
+    const [value,setValue]=useState('');
+    const inputValue=setValue(document.getElementById(input))
     return (
         <>
             <Container>
@@ -15,6 +16,7 @@ function Input(){
                 {/*</InputDiv>*/}
                 <input
                     type={'text'}
+                    id={'input'}
                     placeholder={'please write your message!'}
                     className={'inputDiv'}
                 />
