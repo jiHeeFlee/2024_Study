@@ -1,9 +1,9 @@
+import GlobalStyle from "./GlobalStyle";
 import React from "react";
 import styled from "styled-components";
 
 import Home from "./components/Home";
 import Intro from "./components/Intro";
-import Input from "./components/Input";
 import NavigationBar from "./components/NavigationBar";
 import Time from "./components/Time";
 
@@ -24,7 +24,6 @@ function App() {
               <NavigationBar />
           </div>
           <Intro />
-          <Input />
 
           <Time />
           <div className={'dictionary'}>
