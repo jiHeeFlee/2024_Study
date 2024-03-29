@@ -1,66 +1,41 @@
-import GlobalStyle from "./GlobalStyle";
-import React from "react";
-import styled from "styled-components";
-
-import Home from "./components/Home";
-import Intro from "./components/Intro";
-import NavigationBar from "./components/NavigationBar";
-import Time from "./components/Time";
+import logo from './logo.svg';
+import './App.css';
+import Welcome from "./components/Welcome";
+import styled from "@emotion/styled";
 
 function App() {
-    const person={
-        name : 'jihee',
-        age : 26,
-        developer : true
-    };
-
-    const keys=Object.keys(person);
-
-    return (
-    <>
-      <Container>
-          <div className={'navigationDiv'}>
-              <Home />
-              <NavigationBar />
-          </div>
-          <Intro />
-
-          <Time />
-          <div className={'dictionary'}>
-              {keys+' '}
-          </div>
-      </Container>
-    </>
+  return (
+    // <div className="App">
+    //   <header className="App-header">
+    //     <img src={logo} className="App-logo" alt="logo" />
+    //     <p>
+    //       Edit <code>src/App.js</code> and save to reload.
+    //     </p>
+    //     <a
+    //       className="App-link"
+    //       href="https://reactjs.org"
+    //       target="_blank"
+    //       rel="noopener noreferrer"
+    //     >
+    //       Learn React
+    //     </a>
+    //   </header>
+    // </div>
+      <>
+        <Wrapper>
+          <Welcome name={'flee'} />
+        </Wrapper>
+      </>
   );
 }
 
-export default App;
-
-const Container=styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  //justify-content: center;
-
-  color: darkgoldenrod;
-  //background-color: #1ea8a3;
-
-  .navigationDiv{
-    display: flex;
-    flex-direction: row;
-    margin: 3vh auto;
-  }
-  .dictionary{
-    flex-direction: column;
-    
-    width: 10vw;
-    height: 4vh;
-
-    color: #ce4c4c;
-    background-color: #fffdfd;
-    outline: none;
-    border: none;
-    border-radius: 50%;
+const Wrapper=styled.div`
+  color: #d51f1f;
+  background-color: #fff;
+  
+  &:hover{
+    color: dodgerblue;
+    background-color: orange;
   }
 `;
+export default App;
