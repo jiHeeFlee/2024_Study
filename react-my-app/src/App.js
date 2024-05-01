@@ -1,9 +1,10 @@
-import * as React from 'react'
-import { useTrail, useChain, useSprings, animated, useSpringRef } from '@react-spring/web'
+// import logo from './logo.svg';
+// import './App.css';
 
-// import styles from './styles.module.css'
-// import styles from 'react-redux-app/src/why.css';
-import styles from './why.css';
+import * as React from 'react';
+import { useTrail,useChain,useSprings, animated, useSpringRef } from '@react-spring/web';
+// import * as styles from './App.css';
+import styles from './App.css';
 
 const COORDS = [
   [50, 30],
@@ -15,49 +16,49 @@ const COORDS = [
   [90, 50],
 ]
 
-const STROKE_WIDTH = 0.5
+const STROKE_WIDTH = 1.0
 
 const OFFSET = STROKE_WIDTH / 2
 
 const MAX_WIDTH = 150 + OFFSET * 2
 const MAX_HEIGHT = 100 + OFFSET * 2
 
-export default function App() {
+function App() {
   const gridApi = useSpringRef()
 
-  const gridSprings = useTrail(16, {
-    ref: gridApi,
-    from: {
-      x2: 0,
-      y2: 0,
+  const gridSprings = useTrail(16,{
+    ref:gridApi,
+    from:{
+      x2:0,
+      y2:0,
     },
-    to: {
+    to:{
       x2: MAX_WIDTH,
       y2: MAX_HEIGHT,
-    },
+    }
   })
 
-  const boxApi = useSpringRef()
+  const boxApi=useSpringRef()
 
-  const [boxSprings] = useSprings(7, i => ({
-    ref: boxApi,
-    from: {
-      scale: 0,
+  const [boxSprings]=useSprings(7,i=>({
+    ref:boxApi,
+    from:{
+      scale:0,
     },
-    to: {
-      scale: 1,
+    to:{
+      sclae:1
     },
-    delay: i * 200,
-    config: {
-      mass: 2,
-      tension: 220,
+    delay:i*200,
+    config:{
+      mass:2,
+      tension:220,
     },
   }))
 
-  useChain([gridApi, boxApi], [0, 1], 1500)
+  useChain([gridApi,boxApi],[0,1],1500)
 
   return (
-    <div className={styles['background-container']}>
+    <div className={styles.backgroundContainer}>
       <div className={styles.container}>
         <svg viewBox={`0 0 ${MAX_WIDTH} ${MAX_HEIGHT}`}>
           <g>
@@ -89,7 +90,8 @@ export default function App() {
               key={index}
               width={10}
               height={10}
-              fill="currentColor"
+              // fill="currentColor"
+              fill="#FE5826"
               style={{
                 transformOrigin: `${5 + OFFSET * 2}px ${5 + OFFSET * 2}px`,
                 transform: `translate(${COORDS[index][0] + OFFSET}px, ${COORDS[index][1] + OFFSET}px)`,
@@ -100,5 +102,7 @@ export default function App() {
         </svg>
       </div>
     </div>
-  )
+  );
 }
+
+export default App;
