@@ -82,7 +82,6 @@ function App() {
 
   return (
     <BackgroundContainer>
-      왜 백그라운드 css가 적용이 안될까욤..?
       <Container>
         <svg viewBox={`0 0 ${MAX_WIDTH} ${MAX_HEIGHT}`}>
           <g>
