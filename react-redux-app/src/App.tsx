@@ -1,60 +1,3 @@
-// import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <span>
-//           <span>Learn </span>
-//           <a
-//             className="App-link"
-//             href="https://reactjs.org/"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             React
-//           </a>
-//           <span>, </span>
-//           <a
-//             className="App-link"
-//             href="https://redux.js.org/"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Redux
-//           </a>
-//           <span>, </span>
-//           <a
-//             className="App-link"
-//             href="https://redux-toolkit.js.org/"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Redux Toolkit
-//           </a>
-//           ,<span> and </span>
-//           <a
-//             className="App-link"
-//             href="https://react-redux.js.org/"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             React Redux
-//           </a>
-//         </span>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import * as React from 'react'
 import { useTrail, useChain, useSprings, animated, useSpringRef } from '@react-spring/web'
 
@@ -79,7 +22,7 @@ const OFFSET = STROKE_WIDTH / 2
 const MAX_WIDTH = 150 + OFFSET * 2
 const MAX_HEIGHT = 100 + OFFSET * 2
 
-function App() {
+export default function App() {
   const gridApi = useSpringRef()
 
   const gridSprings = useTrail(16, {
@@ -159,4 +102,3 @@ function App() {
     </div>
   )
 }
-export default App;
