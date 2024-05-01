@@ -2,9 +2,9 @@
 // import './App.css';
 
 import * as React from 'react';
+import styled from 'styled-components';
 import { useTrail,useChain,useSprings, animated, useSpringRef } from '@react-spring/web';
-// import * as styles from './App.css';
-import styles from './App.css';
+
 
 const COORDS = [
   [50, 30],
@@ -23,8 +23,28 @@ const OFFSET = STROKE_WIDTH / 2
 const MAX_WIDTH = 150 + OFFSET * 2
 const MAX_HEIGHT = 100 + OFFSET * 2
 
+const BackgroundContainer=styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: #FE5826;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Container=styled.div`
+  max-width: 800px;
+  width: 50vw;
+  margin: 0 auto;
+`;
+
 function App() {
+  // useSpringRef를 사용하여 애니메이션에 대한 참조를 생성
   const gridApi = useSpringRef()
+
+  // useTrail을 사용하여 그리드 라인들의 애니메이션을 구현함.
+  // 그리드 라인들이 점차 커지는 것을 보여주기 위해 x2, y2 속성을 애니메이션 화 한다.
 
   const gridSprings = useTrail(16,{
     ref:gridApi,
@@ -40,6 +60,8 @@ function App() {
 
   const boxApi=useSpringRef()
 
+  // useSprings을 사용하여 상자들의 애니메이션을 구현
+  // 각 상자의 크기 변화를 보여주기 위해 scale 속성을 애니메이션화 한다.
   const [boxSprings]=useSprings(7,i=>({
     ref:boxApi,
     from:{
@@ -55,11 +77,13 @@ function App() {
     },
   }))
 
+  // uesChain을 사용하여 애니메이션을 순차적으로 실행
   useChain([gridApi,boxApi],[0,1],1500)
 
   return (
-    <div className={styles.backgroundContainer}>
-      <div className={styles.container}>
+    <BackgroundContainer>
+      왜 백그라운드 css가 적용이 안될까욤..?
+      <Container>
         <svg viewBox={`0 0 ${MAX_WIDTH} ${MAX_HEIGHT}`}>
           <g>
             {gridSprings.map(({ x2 }, index) => (
@@ -85,13 +109,14 @@ function App() {
               />
             ))}
           </g>
+          {/* 배열을 매핑하여 각각의 상자를 렌더링함.
+          상자의 위치와 크기를 COORDS 배열에서 가져와 애니메이션화 한다. */}
           {boxSprings.map(({ scale }, index) => (
             <animated.rect
               key={index}
               width={10}
               height={10}
-              // fill="currentColor"
-              fill="#FE5826"
+              fill="currentColor"
               style={{
                 transformOrigin: `${5 + OFFSET * 2}px ${5 + OFFSET * 2}px`,
                 transform: `translate(${COORDS[index][0] + OFFSET}px, ${COORDS[index][1] + OFFSET}px)`,
@@ -100,8 +125,8 @@ function App() {
             />
           ))}
         </svg>
-      </div>
-    </div>
+      </Container>
+    </BackgroundContainer>
   );
 }
 
