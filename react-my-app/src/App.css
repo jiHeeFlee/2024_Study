@@ -17,3 +17,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Jersey+20+Charted&family=Noto+Color+Emoji&family=Noto+Sans+KR:wght@100..900&family=Workbench&display=swap');
 
+.App{
+  text-align: center;
+}
+
+.black-bg{
+  display: flex;
+  background: black;
+  width: 100%;
+  color:orange;
+  padding-left: 20px;
+}

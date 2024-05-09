@@ -23,11 +23,14 @@ import Profile from './pages/Profile';
 
 import Header from './components/Header';
 
+// 세션 코드
+import './App.css';
+import NumberCounter from './components/NumberCounter';
 
 // router css
 const Container=styled.div`
   height:100%;
-  background-color:##FFDD87;
+  background-color:#FFDD87;
 `;
 
 // animation 변수, css
@@ -116,20 +119,17 @@ function App() {
   // uesChain을 사용하여 애니메이션을 순차적으로 실행
   // useChain([gridApi,boxApi],[0,1],1500)
 
+  // 세션 코드
+  let post='한국외대 글로벌 멋사 후기';
+  let title='게시글 제목'
   return (
     // router
     <>
 
-      <Provider store={store}>
+      {/* <Provider store={store}>
         <Container>
           <Router>
             <Routes>
-              {/* <Route path='/' element={<Main />}>
-                {elements}
-              </Route>
-              <Route path='/login' element={<Login />}>
-                {elements}
-              </Route> */}
               <Route path='/' element={<Main />} />
               <Route path='/login' element={<Login />} />
               <Route path='/joinMembership' element={<JoinMembership />} />
@@ -140,7 +140,17 @@ function App() {
             </Routes>
           </Router>
         </Container>
-      </Provider>
+      </Provider> */}
+
+      {/* 세션코드 */}
+      <div className='App'>
+        <div className='black-bg'>
+          <h3>멋쟁이사자처럼</h3>
+        </div>
+        <h4 id={title}>{post}</h4>
+        <h style = {{color : 'green', fontSize: '20px'}}>본문입니다.</h>
+        <NumberCounter />
+      </div>
     </>
 
     // animation 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Counter from '../components/Counter';
 
 const Container=styled.div`
     display:flex;
@@ -16,6 +17,7 @@ const Main = () => {
         <>
             <Container>
                 <Text>test Text - Main </Text>
+                <Counter />
                 <Link to={'/login'}>Login 이동</Link>
                 <Link to={'/joinMembership'}>Join 이동</Link>
                 <Link to={'/project'}>Project 이동</Link>
