@@ -6,6 +6,15 @@ const Text=styled.p`
     color:blue;
     font-weight:700;
 `;
+
+const LoginContainer=styled.div`
+    display:flex;
+    flex-direction:column;
+`;
+const LoginInput=styled.input`
+    padding: 10px;
+`;
+
 const Login=()=>{
 
     return(
@@ -14,6 +23,11 @@ const Login=()=>{
             <Link to={'/'}>
                 Main 이동
             </Link>
+            <LoginContainer>
+                ID <LoginInput placeholder='아이디를 입력해주세요.'/>
+                PW <LoginInput placeholder='비밀번호를 입력해주세요.'/>
+            </LoginContainer>
+            
         </>
     )
 }

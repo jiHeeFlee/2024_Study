@@ -4,7 +4,7 @@
 // import { useTrail,useChain,useSprings, animated, useSpringRef } from '@react-spring/web';
 
 // router import
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { Route,BrowserRouter as Router,Routes } from 'react-router-dom';
 import routes from './routes';
@@ -12,8 +12,7 @@ import store from './redux/store';
 import Cookies from 'js-cookie';
 import styled from 'styled-components'
 
-import { login } from './redux/userSlice';
-// import GlobalStyle from './styles/GlobalStyle';
+// import { login } from './redux/userSlice';
 import Main from './pages/Main';
 import Login from './pages/Login';
 import JoinMembership from './pages/JoinMembership';
@@ -21,6 +20,8 @@ import Project from './pages/Project';
 import Curriculum from './pages/Curriculum';
 import Member from './pages/Member';
 import Profile from './pages/Profile';
+
+import Header from './components/Header';
 
 
 // router css
@@ -62,19 +63,19 @@ const Container=styled.div`
 
 function App() {
   // Router 
-  const elements=routes.map((item,index)=>{
-    <Route key={index} path={item.path} elements={item.element} />
-  });
+  // const elements=routes.map((item,index)=>{
+  //   <Route key={index} path={item.path} elements={item.element} />
+  // });
 
-  useEffect(()=>{
-    const accessToken=Cookies.get('accessToken');
-    const studentNumber=Cookies.get('studentNumber');
-    const id=Cookies.get('id');
+  // useEffect(()=>{
+  //   const accessToken=Cookies.get('accessToken');
+  //   const studentNumber=Cookies.get('studentNumber');
+  //   const id=Cookies.get('id');
 
-    if (accessToken && id){
-      StorageEvent.dispatch(login({accessToken,studentNumber,id}));
-    }
-  },[]);
+  //   if (accessToken && id){
+  //     StorageEvent.dispatch(login({accessToken,studentNumber,id}));
+  //   }
+  // },[]);
 
   //Animation
   // useSpringRef를 사용하여 애니메이션에 대한 참조를 생성
@@ -118,6 +119,7 @@ function App() {
   return (
     // router
     <>
+
       <Provider store={store}>
         <Container>
           <Router>
