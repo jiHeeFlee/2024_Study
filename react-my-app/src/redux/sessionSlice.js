@@ -7,6 +7,7 @@ export const sessionSlice=createSlice({
 
     initialState:{
         // 세션자료에도 accesstoken이 필요한가?
+        // 준영 왈 : 필요 없을 듯
         accessToken:null,
         sessionNumber:null,
         uploadUser:null,
@@ -49,4 +50,4 @@ export const selectSessionNumber=(state)=>state.session.sessionNumber;
 export const selectUploadUser=(state)=>state.session.uploadUser;
 export const selectIsUploadedSession=(state)=>state.session.accessToken !== null;
 
-export default sessionSlice.reducer;
+export default sessionSlice.reducer
