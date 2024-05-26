@@ -1,49 +1,77 @@
-import { createSlice } from '@reduxjs/toolkit';
-import Cookies from 'js-cookie';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const userSlice=createSlice({
+// 초기 상태
+const initialState={
+    user:null,
+    status:'idle',
+    error:null
+};
+
+// 비동기 회원 가입 작업
+export const signUp=createAsyncThunk(
+    'user/signUp',
+    async (userData)=>{
+        const response = await fetch('/members/join/',{
+            method:'POST',
+            header:{
+                'Content-Type' : 'application/json',
+            },
+        });
+        if (!response.ok){
+            throw new Error('Test Nextwork response was not ok');
+        }
+        return response.json();
+    }
+);
+
+//비동기 회원 정보 수정 작업
+export const updateUser=createAsyncThunk(
+    'user/updateUser',
+    async (userData)=>{
+        const response=await fetch('/members/update/${userData.id}',{
+            method:'PUT',
+            headers:{
+                'Content-Type' : 'application/json',
+            },
+            body:JSON.stringify(userData),
+        });
+        if(!response.ok){
+            throw new Error('test updateUserData Network response was not ok');
+        }
+        return response.json();
+    }
+);
+
+// Slice 생성
+const userSlice=createSlice({
     name:'user',
-
-    initialState:{
-        accessToken:null,
-        studentNumber:null,
-        id:null,
-    },
-
-    reducers:{
-        login:(state,action)=>{
-            state.accessToken=action.payload.accessToken;
-            state.studentNumber=action.payload.studentNumber;
-            state.id=action.payload.id;
-
-            Cookies.set('accessToken',action.payload.accessToken,{
-                expires:1,
-            });
-            Cookies.set('studentNumber',action.payload.studentNumber,{
-                expires:1,
-            });
-            Cookies.set('id',action.payload.id,{
-                expires:1,
+    initialState,
+    reducers:{},
+    extraReducers:(builder)=>{
+        builder
+            .addCase(signUp.pending, (state)=>{
+                state.status='loading';
             })
-        },
-        logout:(state)=>{
-            state.accessToken=null;
-            state.studentNumber=null;
-            state.id=null;
-
-            Cookies.remove('accessToken');
-            Cookies.remove('email');
-            Cookies.remove('id');
-        },
+            .addCase(signUp.fulfilled, (state, action)=>{
+                state.status='succeeded';
+                state.user=action.payload;
+            })
+            .addCase(signUp.rejected, (state, action)=>{
+                state.status='failed';
+                state.error=action.error.message;
+            })
+            .addCase(updateUser.pending, (state)=>{
+                state.status='loading';
+            })
+            .addCase(updateUser.fulfilled, (state, action)=>{
+                state.status='succeeded';
+                state.user=action.payload;
+            })
+            .addCase(updateUser.rejected, (state, action)=>{
+                state.status='failed';
+                state.error=action.error.message;
+            });
     },
-
 });
-
-export const {login,logout}=userSlice.actions;
-
-export const selectToken=(state)=>state.user.accessToken;
-export const selectStudentNumber=(state)=>state.user.studentNumber;
-export const selectId=(state)=>state.user.id;
-export const selectIsLoggedIn=(state)=>state.user.accessToken !== null;
 
 export default userSlice.reducer;

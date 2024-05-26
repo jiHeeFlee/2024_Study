@@ -23,11 +23,16 @@ import Profile from './pages/Profile';
 
 import Header from './components/Header';
 
+import React from 'react';
+// import {Provider} from 'react-redux';
+// import store from './store';
+// import JoinMembership from './pages/JoinMembership'; 
+// import Profile from './pages/Profile';
 
 // router css
 const Container=styled.div`
   height:100%;
-  background-color:##FFDD87;
+  background-color:#FFDD87;
 `;
 
 // animation 변수, css
@@ -116,20 +121,15 @@ function App() {
   // uesChain을 사용하여 애니메이션을 순차적으로 실행
   // useChain([gridApi,boxApi],[0,1],1500)
 
+
   return (
     // router
     <>
 
       <Provider store={store}>
         <Container>
-          <Router>
+          {/* <Router>
             <Routes>
-              {/* <Route path='/' element={<Main />}>
-                {elements}
-              </Route>
-              <Route path='/login' element={<Login />}>
-                {elements}
-              </Route> */}
               <Route path='/' element={<Main />} />
               <Route path='/login' element={<Login />} />
               <Route path='/joinMembership' element={<JoinMembership />} />
@@ -138,7 +138,11 @@ function App() {
               <Route path='/member' element={<Member />} />
               <Route path='/profile' element={<Profile />} />
             </Routes>
-          </Router>
+          </Router> */}
+          <h1>Sign up</h1>
+          <JoinMembership />
+          <h1>update user</h1>
+          <Profile />
         </Container>
       </Provider>
     </>
