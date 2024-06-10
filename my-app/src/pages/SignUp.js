@@ -16,7 +16,7 @@ const SignUp = () => {
     memberId: "",
     name: "",
     studentNumber: "",
-    userPhoto: '',
+    // userPhoto: '',
     password1: "",
     password2: "",
     currentPosition: "",
@@ -46,7 +46,7 @@ const SignUp = () => {
           <input type="text" name="memberId" value={formData.memberId} onChange={handleChange} placeholder="Member ID" />
           <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Name" />
           <input type="text" name="studentNumber" value={formData.studentNumber} onChange={handleChange} placeholder="Student Number" />
-          <input type="text" name="userPhoto" value={formData.userPhoto} onChange={handleChange} placeholder="User Photo URL" />
+          {/* <input type="text" name="userPhoto" value={formData.userPhoto} onChange={handleChange} placeholder="User Photo URL" /> */}
           <input type="password" name="password1" value={formData.password1} onChange={handleChange} placeholder="Password" />
           <input type="password" name="password2" value={formData.password2} onChange={handleChange} placeholder="Confirm Password" />
           <input type="text" name="currentPosition" value={formData.currentPosition} onChange={handleChange} placeholder="Current Position" />
@@ -56,6 +56,9 @@ const SignUp = () => {
           <button type="submit">Sign Up</button>
           {user.status === 'loading' && <p>Loading...</p>}
           {user.status === 'failed' && <p>Error: {user.error}</p>}
+
+          <h1>TEst</h1>
+          <input type='password' value='jihee' />
         </form>
       </Container>
     </>

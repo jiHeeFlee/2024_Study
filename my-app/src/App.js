@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import store from '../src/redux/store';
 import SignUp from '../src/pages/SignUp';
 import UpdateUser from '../src/pages/UpdateUser';
-
+import Download from './pages/Download';
 
 const Container=styled.div`
   display: flex;
@@ -23,6 +23,7 @@ const App = () => (
       <SignUp />
       <h1>Update User</h1>
       <UpdateUser />
+      <Download />
     </Container>
   </Provider>
 );
