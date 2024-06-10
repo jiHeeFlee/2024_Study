@@ -9,7 +9,7 @@ const initialState = {
     memberId: "",
     name: "",
     studentNumber: "",
-    userPhoto: '',
+    // userPhoto: '',
     password1: "",
     password2: "",
     currentPosition: "",
@@ -27,6 +27,7 @@ export const signUp = createAsyncThunk(
   async (userData) => {
     const response = await fetch(`${SERVER_URL}/members/join/`, {
       method: 'POST',
+      // credentials: "include",
       headers: {
         'Content-Type': 'application/json',
       },
@@ -45,6 +46,7 @@ export const updateUser = createAsyncThunk(
   async (userData) => {
     const response = await fetch(`${SERVER_URL}/members/update/`, {
       method: 'PUT',
+      // credentials: "include",
       headers: {
         'Content-Type': 'application/json',
       },
@@ -66,25 +68,31 @@ const userSlice = createSlice({
     builder
       .addCase(signUp.pending, (state) => {
         state.status = 'loading';
+        console.log('loading');
       })
       .addCase(signUp.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.user = action.payload;
+        console.log('succeeded');
       })
       .addCase(signUp.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+        console.log('failed');
       })
       .addCase(updateUser.pending, (state) => {
         state.status = 'loading';
+        console.log('loading');
       })
       .addCase(updateUser.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.user = action.payload;
+        console.log('succeeded');
       })
       .addCase(updateUser.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+        console.log('failed');
       });
   },
 });
